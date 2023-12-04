@@ -1,15 +1,15 @@
 {
   "scripts": {
-    "test": "jest --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "test:all": "jest",
     "compile": "tsc",
     "day": "scripts/newDay.sh",
     "part2": "scripts/partTwo.sh"
   },
-  "name": "advent-of-code-typescript-starter",
+  "name": "advent-of-code",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "https://github.com/bpiggin",
   "license": "MIT",
   "dependencies": {
     "jest": "^29.3.1",

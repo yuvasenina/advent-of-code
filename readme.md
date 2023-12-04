@@ -1,15 +1,11 @@
-# Advent of Code Typescript Starter 🎄
+# Advent of Code  🎄
 
-Basic template project for lightning fast and bug free Advent of Code puzzle solving!
-
-https://adventofcode.com/2020
+https://adventofcode.com/2023
 
 Happy Advent!
 
-## Install
+this project was created from this template  https://github.com/bpiggin/advent-of-code-typescript-starter
 
-1. `git clone git@github.com:bpiggin/advent-of-code-typescript-starter.git`
-2. `cd advent-of-code-typescript-starter && yarn install`
 
 ## Features
 
@@ -27,7 +23,6 @@ Happy Advent!
 
 Writing input parsing and project structure boilerplate every day is annoying. Having instant test feedback is really useful.
 
-![](misc/example.gif)
 
 ## Instant test feedback
 
