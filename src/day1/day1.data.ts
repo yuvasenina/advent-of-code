@@ -1,9 +1,9 @@
-import { parseInput } from '../utils/input';
+import { parseInput } from '../utils/input'
 
 const example = `1abc32
 pqr3stu8vwx
 a1b2c3d4e5f
-treb7uchet`;
+treb7uchet`
 
 const example2 = `two1nine
 eightwothree
@@ -1012,9 +1012,9 @@ pptwo6sevenfivevlgs8threegbpc
 ctwoneone7dtztzrk3ninefivexvj
 1oneninegspfm3four43
 sixfourgkdlxtqmbzkgmpmcsevenhzrt4
-eight6twojtzlvlhgjncvx`;
+eight6twojtzlvlhgjncvx`
 
-export const dataExample = parseInput(example) as string[];
-export const dataExample2 = parseInput(example2) as string[];
+export const dataExample = parseInput(example) as string[]
+export const dataExample2 = parseInput(example2) as string[]
 
-export const data = parseInput(input) as string[];
+export const data = parseInput(input) as string[]

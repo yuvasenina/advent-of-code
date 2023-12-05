@@ -1,22 +1,22 @@
-const getDelimiter = (input: string) => {
+const getDelimiter = (input: string): string => {
   if (input.includes(',')) {
-    return ',';
+    return ','
   }
   if (input.includes('\n')) {
-    return '\n';
+    return '\n'
   }
-  return '';
-};
+  return ''
+}
 
-const mapToNumberIfNecessary = (input: string[]) => {
+const mapToNumberIfNecessary = (input: string[]): string[] | number[] => {
   if (input.every((value) => !isNaN(Number(value)))) {
-    return input.map((e) => Number(e));
+    return input.map((e) => Number(e))
   }
-  return input;
-};
+  return input
+}
 
-export const parseInput = (input: string) => {
-  const inputArray = input.split(getDelimiter(input));
-  const trimmed = inputArray.map((e) => e.trim());
-  return mapToNumberIfNecessary(trimmed);
-};
+export const parseInput = (input: string, delimeter?: string): string[] | number[] => {
+  const inputArray = input.split(delimeter || getDelimiter(input))
+  const trimmed = inputArray.map((e) => e.trim())
+  return mapToNumberIfNecessary(trimmed)
+}
