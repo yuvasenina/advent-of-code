@@ -54,7 +54,6 @@ export const getDirections = (
       }
     }
   }
-  console.log('ways', ways)
 
   return ways
 }
@@ -66,59 +65,50 @@ const isPointsEqual = (a: Point, b: Point): boolean => {
 const nextStep = (point: Position, input: string[]): Position => {
   const direction = input[point.cur.y][point.cur.x]
 
-  const changeX = (point: Point, step: number): number => {
-    return point.x + step
-  }
-  const changeY = (point: Point, step: number): number => {
-    return point.y + step
+  const move = (point: Point, x: number, y: number): Point => {
+    return { x: point.x + x, y: point.y + y }
   }
 
-  const newPoint = { ...point.cur }
+  let newPoint: Point = { ...point.cur }
 
   switch (direction) {
     case '|':
-      newPoint.y = changeY(
-        point.cur,
-        point.prev.y < point.cur.y ? 1 : -1
-      )
+      newPoint = move(point.cur, 0, point.prev.y < point.cur.y ? 1 : -1)
 
       break
     case '-':
-      newPoint.x = changeX(
-        point.cur,
-        point.prev.x < point.cur.x ? 1 : -1
-      )
+      newPoint = move(point.cur, point.prev.x < point.cur.x ? 1 : -1, 0)
 
       break
     case 'L':
       if (point.prev.x > point.cur.x) {
-        newPoint.y = changeY(point.cur, -1)
+        newPoint = move(point.cur, 0, -1)
       } else if (point.prev.y < point.cur.y) {
-        newPoint.x = changeX(point.cur, 1)
+        newPoint = move(point.cur, 1, 0)
       }
       break
 
     case 'F':
       if (point.prev.y > point.cur.y) {
-        newPoint.x = changeX(point.cur, 1)
+        newPoint = move(point.cur, 1, 0)
       } else if (point.prev.x > point.cur.x) {
-        newPoint.y = changeY(point.cur, 1)
+        newPoint = move(point.cur, 0, 1)
       }
 
       break
     case 'J':
       if (point.prev.x < point.cur.x) {
-        newPoint.y = changeY(point.cur, -1)
+        newPoint = move(point.cur, 0, -1)
       } else if (point.prev.y < point.cur.y) {
-        newPoint.x = changeX(point.cur, -1)
+        newPoint = move(point.cur, -1, 0)
       }
 
       break
     case '7':
       if (point.prev.x < point.cur.x) {
-        newPoint.y = changeY(point.cur, 1)
+        newPoint = move(point.cur, 0, 1)
       } else if (point.prev.y > point.cur.y) {
-        newPoint.x = changeX(point.cur, -1)
+        newPoint = move(point.cur, -1, 0)
       }
 
       break
